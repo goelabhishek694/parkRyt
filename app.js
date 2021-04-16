@@ -21,7 +21,7 @@ app.get("/", function (req, res) {
 app.post("/submit", async function (req, res) {
 
     const { userphone, carnumber } = req.body;
-    const guest = await userModel.findOne({carnumber:carnumber});
+    // const guest = await userModel.findOne({carnumber:carnumber});
     try{
         // console.log(carnumber);
         
@@ -34,10 +34,10 @@ app.post("/submit", async function (req, res) {
          {
             console.log("inside else");
             // console.log(guest.carnumber);
-            console.log(guest);
+            // console.log(guest);
             console.log("from: "+userphone);
             // console.log("to: "+guest.phoneno);
-            call(userphone,"8587886570");
+            call(userphone,"9312509061");
             res.json({ result: ""});
         }
     }

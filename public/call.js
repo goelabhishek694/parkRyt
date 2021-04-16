@@ -1,11 +1,12 @@
 
 // "EXCLUSIVE500PROMO"
 const axios = require('axios');
+let secrets=require('../../App/public/api');
 
 module.exports=(from,to)=>{
-key = "054b9e5e22581eea7472879b03663aa57f7c14521adee5df";
-sid = "parkryt1"
-token = "1da2d60dc202ba6c1ebce50bbfa7aea7c95834f99c5d7b67"
+key = secrets.key;
+sid = secrets.sid;
+token = secrets.token;
 from = from;
 to = to;
 

@@ -1,6 +1,7 @@
 const mongoose=require("mongoose");
 const validator=require("validator");
-mongoose.connect("mongodb+srv://parkRytDB:Mongo-abhi-1998@cluster0.kprvu.mongodb.net/parkRytDB?retryWrites=true&w=majority",{useNewUrlParser:true,
+const password=require('App/public/password.js');
+mongoose.connect(`mongodb+srv://parkRytDB:${password}@cluster0.kprvu.mongodb.net/parkRytDB?retryWrites=true&w=majority`,{useNewUrlParser:true,
 useCreateIndex:true,useUnifiedTopology:true, useFindAndModify: false});
 const userSchema=new mongoose.Schema({
     name:{
