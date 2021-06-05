@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
-var call=require("../App/public/call");
+// const ngrock=require('ngrok');
+var call=require("./public/flow");
 var app = express();
 app.use(express.urlencoded({ extended: true })); // it adds url encoded string into request's body 
 app.use(express.static('public'));
@@ -16,7 +17,9 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + "App/public/index.html"));
 })
 
-
+app.get("/submit",function(req,res){
+    console.log(res);
+})
 // calling the owner of the car
 app.post("/submit", async function (req, res) {
 
@@ -37,7 +40,8 @@ app.post("/submit", async function (req, res) {
             // console.log(guest);
             console.log("from: "+userphone);
             // console.log("to: "+guest.phoneno);
-            call(userphone,"9312509061");
+            // call(userphone,"9312509061");
+            call();
             res.json({ result: ""});
         }
     }
