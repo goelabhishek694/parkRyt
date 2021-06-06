@@ -1,8 +1,8 @@
-module.exports=()=>{
+module.exports= ()=>{
 key="1829746839d2411bbf40f904f2317913539dc3960a1123ec"
 sid="ieee61"
 token="8bb9dc7ac9a93781e18601200de69d8561c676cfca1c7689"
-from="9990356427"
+from="8826228320"
 // to="xxxxxxxxxx"
 
 const axios = require('axios')
@@ -29,8 +29,8 @@ axios.post(url,
   },
   )
 .then((res) => {
-  console.log(`statusCode: ${res.statusCode}`)
-  console.log(res)
+  console.log(res);
+  // return res.req.query.digits;
 })
 .catch((error) => {
   console.error(error)
