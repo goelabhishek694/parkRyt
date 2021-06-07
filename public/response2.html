@@ -10,7 +10,15 @@
 </head>
 <body>
     <h1>Person is not Vacating the spot</h1>
-
+    <div class="call-button">
+        <button>Call</button>
+    </div>
     <div class="timer">00:00:00</div>
+    <script src="call.js"></script>
+    <script>
+        
+        let callBtn=document.querySelector(".call-button");
+        callBtn.addEventListener("click",callAgent);
+    </script>
 </body>
 </html>
