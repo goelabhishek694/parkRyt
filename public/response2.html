@@ -11,14 +11,16 @@
 <body>
     <h1>Person is not Vacating the spot</h1>
     <div class="call-button">
-        <button>Call</button>
+        <form action="/submit/call" method="POST" id="call-Form">
+            <input type="submit" name="call-button" value="Call the Owner" />
+        </form>
     </div>
     <div class="timer">00:00:00</div>
     <script src="call.js"></script>
-    <script>
+    <!-- <script>
         
-        let callBtn=document.querySelector(".call-button");
+         let callBtn=document.querySelector(".call-button");
         callBtn.addEventListener("click",callAgent);
-    </script>
+    </script> -->
 </body>
 </html>

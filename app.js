@@ -3,7 +3,7 @@ const path = require("path");
 // const ngrock=require('ngrok');
 var callFlow = require("./public/flow");
 let callAgent = require("./public/call");
-
+let numberPLateRecognizer=require("./public/image");
 var app = express();
 app.use(express.urlencoded({ extended: true })); // it adds url encoded string into request's body
 app.use(express.static("public"));
@@ -25,7 +25,15 @@ app.get("/submit", function (req, res) {
   selectedDigit = res.req.query.digits;
 });
 
-app.post("/submit/call", async function (req, res) {});
+app.post("/submit/call", async function (req, res) {
+    try{
+        callAgent();
+        res.sendFile(path.join(__dirname + "/public/response4.html"));
+    }
+    catch(err){
+        console.log(err);
+    }
+});
 // calling the owner of the car via IVR
 app.post("/submit", async function (req, res) {
   const { userphone, carnumber } = req.body;
@@ -46,13 +54,24 @@ app.post("/submit", async function (req, res) {
     console.log("from: " + userphone);
     // console.log("to: "+guest.phoneno);
     // call(userphone,"9312509061");
-    callFlow();
+    // let promise=new Promise(numberPLateRecognizer());
+    // promise.then(){
+      numberPLateRecognizer();
+      callFlow();
+    // }
+    
     // setTimeout()
     function fn() {
       // let a=selectedDigit.length;
       // console.log(a);
-      if(selectedDigit) let arr = selectedDigit.split("");
-      let num = parseInt(arr[1]) || 0;
+      if(selectedDigit) {
+          var arr = selectedDigit.split("");
+          var num = parseInt(arr[1]);
+      }
+      else{
+        num=0;
+      }
+      // let  || 0;
       // console.log(selectedDigit);
       // console.log(parseInt("1",10));
       console.log(num);
