@@ -14,24 +14,27 @@ let carnumber=document.getElementById("carnumber");
 //     // console.log(response);
 //     return response.data.Response.View[0].Result[0].Location.Address.Label
 // }
-async function submitData(userphoneVal) {
+async function submitData(userphoneVal,carnumberVal) {
     const response = await axios.post("/submit", {
         userphone: userphoneVal,
         carnumber: carnumberVal
     });
     if (response.data.result) {
         // alert("user verified");
-        location.assign("/index.html");
-    } else {
-        alert("user already checked in");
-    }
+        location.assign("/public/index.html");
+    } 
+    // else {
+    //     alert("Owner could not be contacted");
+    //     // location.assign("public\html\response4.html")
+    // }
 }
 if (detailForm) {
     detailForm.addEventListener("submit", async function (e) {
         e.preventDefault();
         const userphoneVal = userphone.value;
-        const carnumberVal= carnumber.value;
+        let carnumberVal="DL 4C AF 6569";
         // const hphonenoVal = parseInt("91"+hphoneno.value);;
         submitData(userphoneVal,carnumberVal);
     })
 }
+// C:\Users\Deepali Bindal\Desktop\AbhishekGoel\parkRyt\public\html\response1.html

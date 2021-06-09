@@ -5,7 +5,7 @@ module.exports = () => {
   // this is the victim
   from = "9999508409";
   // this is the person who has wrongly arked
-  to = "8826228320";
+  to = "9810065409";
 
   const formUrlEncoded = (x) =>
     Object.keys(x).reduce(
@@ -40,7 +40,7 @@ module.exports = () => {
       }
     )
     .then((res) => {
-      console.log(`statusCode: ${res.statusCode}`);
+      console.log(`statusCode: ${res.status}`);
       console.log(res);
     })
     .catch((error) => {
