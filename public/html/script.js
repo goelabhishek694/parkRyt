@@ -32,7 +32,7 @@ if (detailForm) {
     detailForm.addEventListener("submit", async function (e) {
         e.preventDefault();
         const userphoneVal = userphone.value;
-        let carnumberVal="DL 4C AF 6569";
+        const carnumberVal=carnumber.value;
         // const hphonenoVal = parseInt("91"+hphoneno.value);;
         submitData(userphoneVal,carnumberVal);
     })

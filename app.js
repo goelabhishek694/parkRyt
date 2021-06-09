@@ -49,6 +49,8 @@ app.post("/submit", async function (req, res) {
     // console.log(guest.carnumber);
     // console.log(guest);
     console.log("from: " + userphone);
+    console.log("carNumberPath: " + carnumber);
+    
     // console.log("to: "+guest.phoneno);
     // call(userphone,"9312509061");
     // let promise=new Promise(numberPLateRecognizer());
