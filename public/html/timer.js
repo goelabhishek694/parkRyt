@@ -1,6 +1,9 @@
+// const axios = require("axios");
+
 let timerEle=document.querySelector(".timer");
 let callOwnerBtn=document.querySelector(".call-owner");
 let emergencyBtn=document.querySelector(".emergency");
+let owner;
 
 console.log("In timer.js");
 
@@ -8,6 +11,17 @@ window.addEventListener('load',startCounting);
 emergencyBtn.addEventListener("click",function(){
     callOwnerBtn.classList.add("btn-active");
     stopCounting();
+});
+async function callOwner(){
+    const response=await axios.post("/callOwner",{
+        owner:"9810065409"
+    });
+    if(response.data.result){
+        location.assign("/public/response4.html");
+    }
+}
+callOwnerBtn.addEventListener("click",async function(e){
+    callOwner();
 })
 
 function startCounting(){
