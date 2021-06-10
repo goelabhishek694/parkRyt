@@ -69,7 +69,7 @@ app.post("/submit", async function (req, res) {
           var num = parseInt(arr[1]);
       }
       else{
-        num=1;
+        num=0;
       }
       // let  || 0;
       // console.log(selectedDigit);

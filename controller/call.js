@@ -4,8 +4,8 @@ module.exports = () => {
   token = "8bb9dc7ac9a93781e18601200de69d8561c676cfca1c7689";
   // this is the victim
   from = "9999508409";
-  // this is the person who has wrongly arked
-  to = "9810065409";
+  // this is the person who has wrongly parked
+  to = "8826228320";
 
   const formUrlEncoded = (x) =>
     Object.keys(x).reduce(

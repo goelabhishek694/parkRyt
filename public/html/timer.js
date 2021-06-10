@@ -14,7 +14,7 @@ emergencyBtn.addEventListener("click",function(){
 });
 async function callOwner(){
     const response=await axios.post("/callOwner",{
-        owner:"9810065409"
+        owner:"8826228320"
     });
     if(response.data.result){
         location.assign("/public/response4.html");
